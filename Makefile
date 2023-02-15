@@ -198,6 +198,9 @@ UPROGS=\
 	$U/_primes\
 	$U/_find\
 	$U/_xargs\
+	$U/_trace\
+	$U/_sysinfotest\
+
 
 ifeq ($(LAB),$(filter $(LAB), pgtbl lock))
 UPROGS += \
@@ -248,7 +251,6 @@ ifeq ($(LAB),fs)
 UPROGS += \
 	$U/_bigfile
 endif
-
 
 
 ifeq ($(LAB),net)
