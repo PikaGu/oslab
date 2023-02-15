@@ -44,7 +44,6 @@ OBJS_KCSAN += \
 	$K/kcsan.o
 endif
 
-
 ifeq ($(LAB),$(filter $(LAB), lock))
 OBJS += \
 	$K/stats.o\
@@ -189,30 +188,8 @@ UPROGS=\
 	$U/_grind\
 	$U/_wc\
 	$U/_zombie\
-	$U/_sleep\
-	$U/_pingpong\
-	$U/_primes\
-	$U/_find\
-	$U/_xargs\
-	$U/_trace\
-	$U/_sysinfotest\
 
 
-ifeq ($(LAB),$(filter $(LAB), pgtbl lock))
-UPROGS += \
-	$U/_stats
-endif
-
-ifeq ($(LAB),traps)
-UPROGS += \
-	$U/_call\
-	$U/_bttest
-endif
-
-ifeq ($(LAB),lazy)
-UPROGS += \
-	$U/_lazytests
-endif
 
 
 ifeq ($(LAB),$(filter $(LAB), lock))
@@ -253,7 +230,6 @@ ph: notxv6/ph.c
 barrier: notxv6/barrier.c
 	gcc -o barrier -g -O2 $(XCFLAGS) notxv6/barrier.c -pthread
 endif
-
 
 ifeq ($(LAB),pgtbl)
 UPROGS += \
